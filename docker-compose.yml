@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  database_ignite:
+    image: postgres
+    container_name: database_prisma
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=101010
+      - POSTGRES_DB=prismanodejs
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
